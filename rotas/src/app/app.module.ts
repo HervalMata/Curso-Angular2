@@ -4,10 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { CursosModule } from './cursos/cursos.module';
-import { CursosService } from './cursos/cursos.service';
-import { CriarCursoModule } from './criar-curso/criar-curso.module';
-import { LogService } from "app/shared/log.service";
+
+import { MaterializeModule } from 'angular2-materialize';
 
 @NgModule({
   declarations: [
@@ -17,11 +15,9 @@ import { LogService } from "app/shared/log.service";
     BrowserModule,
     FormsModule,
     HttpModule,
-    CriarCursoModule,
-    CursosModule
+    MaterializeModule
   ],
-  providers: [LogService],
-  //providers: [CursosService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
