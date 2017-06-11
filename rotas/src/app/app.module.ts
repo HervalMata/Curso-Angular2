@@ -15,6 +15,10 @@ import { LoginComponent } from './login/login.component';
 //import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component';
 import { AppRoutingModule } from "app/app.routing.module";
 import { AuthService } from "app/login/auth.service";
+import { AuthGuard } from "app/guards/auth-guard";
+import { CursosGuard } from "app/guards/cursos.guard";
+import { AlunosGuard } from "app/guards/alunos.guard";
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 //import { CursosModule } from "app/cursos/cursos.module";
 //import { AlunosComponent } from './alunos/alunos.component';
 //import { AlunosModule } from "app/alunos/alunos.module";
@@ -23,7 +27,8 @@ import { AuthService } from "app/login/auth.service";
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent//,
+    LoginComponent,
+    PaginaNaoEncontradaComponent//,
     //AlunosComponent//,
     //CursosComponent,
     //CursoDetalheComponent,
@@ -39,7 +44,12 @@ import { AuthService } from "app/login/auth.service";
     AppRoutingModule
     //routing
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService, 
+    AuthGuard,
+    CursosGuard,
+    AlunosGuard
+    ],
   //providers: [CursosService],
   bootstrap: [AppComponent]
 })

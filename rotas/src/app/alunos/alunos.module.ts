@@ -6,6 +6,8 @@ import { AlunosRoutingModule } from "./alunos.routing.module";
 import { AlunoDetalheComponent } from "./aluno-detalhe/aluno-detalhe.component";
 import { AlunosService } from "app/alunos/alunos.service";
 import { FormsModule } from "@angular/forms";
+import { AlunosDeactivateGuard } from "app/guards/alunos.deactivate.guard";
+import { AlunoDetalheResolver } from "app/alunos/guards/aluno-detalhe.resolver";
 
 @NgModule({
     declarations: [
@@ -18,7 +20,11 @@ import { FormsModule } from "@angular/forms";
                AlunosRoutingModule
      ],
     exports: [],
-    providers: [AlunosService],
+    providers: [
+        AlunosService,
+        AlunosDeactivateGuard,
+        AlunoDetalheResolver
+    ],
     bootstrap: []
 })
 export class AlunosModule {}
